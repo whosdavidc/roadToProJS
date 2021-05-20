@@ -24,18 +24,30 @@
     </main>
 
     <script type="module">
-        const video = document.querySelector("video")
-        const button = document.querySelector("button")
+        const video = document.querySelector("video");
+        const button = document.querySelector("button");
 
 
-        function MediaPlayer() {}
-
-        MediaPlayer.prototype.play = function(){
-            video.play()
+        function MediaPlayer(config) {
+            this.media = config.el
         };
 
-        const player = new MediaPlayer();
-        button.onclick = () => player.play();
+        MediaPlayer.prototype.play = function(){
+            this.media.play()
+        };
+
+        MediaPlayer.prototype.pause = function(){
+            this.media.pause()
+        };
+
+            
+            
+        const player = new MediaPlayer({ el: video});
+
+        button.onclick = () => {
+            player.media.paused ? 
+            player.play():player.pause();
+        };
 
     </script>
   </body>
