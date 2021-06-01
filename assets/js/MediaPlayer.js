@@ -36,4 +36,3 @@ function MediaPlayer(config) {
   };
   
   export default MediaPlayer;
-  
