@@ -91,7 +91,7 @@
 
                 //OBJECT.CREATE
 
-                
+                /* 
                 const heroMethods = {
                     sayHi: function(){
                         console.log(`I'm ${this.name}`)
@@ -108,11 +108,24 @@
                 const batman = Hero("Batman");
                 const shazam = Hero("Shazam");
                 batman.sayHi()
+                shazam.sayHi() */
+                
+                function Hero (name) {
+                    this.name = name;
+                }
+
+                Hero.prototype.sayHi = function () {
+                    console.log(`New: ${this.name}`)
+                }
+                
+
+
+
+                const batman = new Hero("Batman");
+                batman.sayHi()
+
+                const shazam = new Hero("Shazam");
                 shazam.sayHi() 
-
-
-
-
             </script>
         </div>
     </main>
