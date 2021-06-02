@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercises</title>
+</head>
+<body>
+    <style>
+        .divButtons{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+        }
+
+        .button{
+            background-color: red;
+            width:10em;
+            height:5em;
+            margin-bottom: 2em;
+        }
+    </style>
+    <main class="main-container">
+        <h1>Excercises</h1>
+
+
+        <div class="divButtons">
+            <button class="button">
+            <button class="button">
+            <button class="button">
+            <button class="button">
+        </div>
+        
+        
+
+        <div class="prototype-section">
+            <script>
+                /* V0
+                const batman = {
+                    name: "Batman"
+                }
+                batman.sayHi = function (){ console.log(`I'm ${this.name}`)}
+                batman.sayHi();
+
+                const shazam = {
+                    name:"Shazam"
+                }
+                shazam.sayHi = function () { console.log(`I'm ${this.name}`) }
+                shazam.sayHi()*/
+
+                /* V1
+                function Hero (name) {
+                    const hero = {
+                        name: name
+                    };
+
+                    hero.sayHi = function (){console.log(`I'm ${this.name}`)};
+                    
+                    return hero
+                }
+
+                const batman = Hero("Batman");
+                batman.sayHi() 
+                */
+
+                /* const heroMethods = {
+                    sayHi: function(){
+                        console.log(`I'm ${this.name}`)
+                    },
+                };
+
+
+                
+                function Hero (name) {
+                    const hero = {
+                        name: name
+                    };
+
+                    hero.sayHi = heroMethods.sayHi;
+                    return hero;
+                }
+
+                const batman = Hero("Batman");
+                const shazam = Hero("Shazam");
+                batman.sayHi()
+                shazam.sayHi() 
+ */
+
+                //OBJECT.CREATE
+
+                
+                const heroMethods = {
+                    sayHi: function(){
+                        console.log(`I'm ${this.name}`)
+                    },
+                };
+
+
+                
+                function Hero (name) {
+                    const hero = Object.create(heroMethods)
+                    return hero;
+                }
+
+                const batman = Hero("Batman");
+                const shazam = Hero("Shazam");
+                batman.sayHi()
+                shazam.sayHi() 
+
+
+
+
+            </script>
+        </div>
+    </main>
+    <script src="./forNodes.js"></script>
+</body>
+</html>
